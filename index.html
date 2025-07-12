@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>股票庫存</title>
+    <link rel="stylesheet" href="./style.css" />
+    <!-- Material Icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <span class="material-icons logo">assessment</span>
+        <h1>股票計算器</h1>
+      </header>
+
+      <section class="summary">
+        <div class="summary-card">
+          <h2 id="sum-count">0</h2>
+          <p>持有股票數</p>
+        </div>
+        <div class="summary-card">
+          <h2 id="sum-invest">$0</h2>
+          <p>總投資金額</p>
+        </div>
+        <div class="summary-card">
+          <h2 id="sum-market">$0</h2>
+          <p>總市值</p>
+        </div>
+        <div class="summary-card">
+          <h2 id="sum-profit">$0</h2>
+          <p>總損益</p>
+        </div>
+      </section>
+
+      <main class="main-content">
+        <aside class="sidebar">
+          <h2>新增股票</h2>
+          <label
+            >股票代碼
+            <input id="input-code" placeholder="例如: 2330" />
+          </label>
+          <label
+            >股數
+            <input id="input-shares" type="number" value="1000" />
+          </label>
+          <label
+            >買入價格
+            <input id="input-price" type="number" />
+          </label>
+          <button id="btn-add" class="primary">新增股票</button>
+
+          <div class="quick-actions">
+            <button id="btn-refresh" class="secondary">
+              <span class="material-icons">refresh</span>更新現價
+            </button>
+            <button id="btn-reset" class="danger">
+              <span class="material-icons">delete_forever</span>清空投資組合
+            </button>
+          </div>
+        </aside>
+
+        <section class="portfolio">
+          <h2>投資組合</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>股票代碼</th>
+                <th>名稱</th>
+                <th>新增日期</th>
+                <th>持有股數</th>
+                <th>買入價格</th>
+                <th>現價</th>
+                <th>投資成本</th>
+                <th>市值</th>
+                <th>損益</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody id="table-body"></tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <div id="stock-modal" class="modal" style="display: none">
+      <div class="modal-content">
+        <span class="close" id="modal-close">&times;</span>
+        <div id="modal-body"></div>
+      </div>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
